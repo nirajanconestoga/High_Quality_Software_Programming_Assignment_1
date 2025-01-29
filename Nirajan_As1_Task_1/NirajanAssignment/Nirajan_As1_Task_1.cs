@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            // Variables to store the prices for round trips
+            // Variables to store the prices for trips
             int priceCalgary = 1350 * 2;
             int priceVancouver = 1500 * 2;
             int priceMontreal = 575 * 2;
@@ -25,6 +25,7 @@
             if (tripsCalgary <= 0)
             {
                 Console.WriteLine("No acceptable value");
+                return;
 
             }
             //Total cost in the Calgary
@@ -37,6 +38,7 @@
             if (tripsVancouver < 0)
             {
                 Console.WriteLine("No acceptable value");
+                return;
             }
             //Total cost in the Vancouver
             totalVancouverCost += tripsVancouver * priceVancouver;
@@ -48,17 +50,18 @@
             if (tripsMontreal < 0)
             {
                 Console.WriteLine("No acceptable value");
+                return;
             }
             // Total cost in the Montreal
             totalMontrealCost += tripsMontreal * priceMontreal;
-            Console.WriteLine("Total expenses in Vancouver is $" + totalMontrealCost);
+            Console.WriteLine("Total expenses in Montreal is $" + totalMontrealCost);
 
             // Get total trips made by Carlo
             totalTrips = tripsCalgary + tripsMontreal + tripsVancouver;
             Console.WriteLine("The total trips made by Carlo is " + totalTrips);
 
             // Get total expenses made by Carlo
-            totalCost = totalCalgaryCost + totalVancouverCost + totalCalgaryCost;  
+            totalCost = totalCalgaryCost + totalVancouverCost + totalMontrealCost;  
             Console.WriteLine("Total trip cost of Carlo is $" + totalCost);
 
             // Get average price per trip
