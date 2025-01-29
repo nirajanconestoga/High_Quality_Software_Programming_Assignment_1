@@ -12,11 +12,13 @@
             // Variable to store the total number of trip
             int totalTrips = 0;
 
-            // Variable to store the cost per state and total cost of the trips
-            double totalCalgaryCost = 0;
-            double totalVancouverCost = 0;
-            double totalMontrealCost = 0;
-            double totalCost = 0;
+            // Variable to store the cost per state
+            int totalCalgaryCost = 0;
+            int totalVancouverCost = 0;
+            int totalMontrealCost = 0;
+
+            // Variable to store the total cost of the trips
+            int totalCost = 0;
 
 
             // Get the number of trips to Calgary
@@ -64,11 +66,11 @@
             totalCost = totalCalgaryCost + totalVancouverCost + totalMontrealCost;  
             Console.WriteLine("Total trip cost of Carlo is $" + totalCost);
 
-            // Get average price per trip
+            // Get average cost per trip
             double averagePrice = totalCost / totalTrips;
             Console.WriteLine("The average price per trip is $" + averagePrice);
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
