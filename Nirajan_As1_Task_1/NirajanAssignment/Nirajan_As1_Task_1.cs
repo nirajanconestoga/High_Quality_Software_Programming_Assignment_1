@@ -2,13 +2,18 @@
 {
     class Trips
     {
+        const int calgaryPrice = 1350;
+        const int vancouverPrice = 1500;
+        const int montrealPrice = 575;
+        // Enums for all trip prices
+        enum TripPrice
+        {
+            Calgary = calgaryPrice * 2,
+            Vancouver = vancouverPrice * 2,
+            Montreal = montrealPrice * 2
+        }
         static void Main()
         {
-            // Variables to store the prices for trips
-            int priceCalgary = 1350 * 2;
-            int priceVancouver = 1500 * 2;
-            int priceMontreal = 575 * 2;
-
             // Variables to store trip counts and costs
             int tripsCalgary = 0, tripsVancouver = 0, tripsMontreal = 0;
             int totalCalgaryCost = 0, totalVancouverCost = 0, totalMontrealCost = 0;
@@ -18,7 +23,7 @@
             try
             {
                 Console.Write("Trips to Calgary: ");
-                tripsCalgary = Convert.ToInt32(Console.ReadLine());
+                tripsCalgary = int.Parse(Console.ReadLine());
                 if (tripsCalgary < 0)
                 {
                     Console.WriteLine("No acceptable value for Calgary trips.");
@@ -37,14 +42,14 @@
             try
             {
                 Console.Write("Trips to Vancouver: ");
-                tripsVancouver = Convert.ToInt32(Console.ReadLine());
+                tripsVancouver = int.Parse(Console.ReadLine());
                 if (tripsVancouver < 0)
                 {
                     Console.WriteLine("No acceptable value for Vancouver trips.");
                     Console.ReadLine();
                     return;
                 }
-                
+
             }
             catch (FormatException)
             {
@@ -77,9 +82,9 @@
             Console.WriteLine("The total trips made by Carlo is " + totalTrips);
 
             // Total Cost in Calgary, Vancouver and Montreal
-            totalCalgaryCost = tripsCalgary * priceCalgary;
-            totalVancouverCost = tripsVancouver * priceVancouver;
-            totalMontrealCost = tripsMontreal * priceMontreal;
+            totalCalgaryCost = (tripsCalgary * (int)TripPrice.Calgary);
+            totalVancouverCost = (tripsVancouver * (int)TripPrice.Vancouver);
+            totalMontrealCost = (tripsMontreal * (int)TripPrice.Montreal);
 
             Console.WriteLine("Total expenses in Calgary is $" + totalCalgaryCost);
             Console.WriteLine("Total expenses in Vancouver is $" + totalVancouverCost);
